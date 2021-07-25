@@ -3,7 +3,7 @@
 
 
 # Instructions
-## Step 1： identification of reference insertions and deletions.
+## Step 1：identification of reference insertions and deletions.
 
 
 Using each of the 20 *B. rapa* genomes as the reference and aligned each of the left 19 genome sequneces to the reference genome and call reference insertions and deletions using the [smartie-sv](https://github.com/zeeev/smartie-sv) piepeline.
