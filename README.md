@@ -23,5 +23,5 @@ Using each of the 20 *B. rapa* genomes as the reference and aligned each of the 
 
 
 
-## Step 3: Genotype TIPs in a large-scale B. rapa resequencing genome using short reads.
+## Step 3: Genotype TE insertions in a large-scale *B. rapa* population using short reads.
 ![image](https://github.com/caixu0518/ITIPs/blob/main/png/Step%203.png)
