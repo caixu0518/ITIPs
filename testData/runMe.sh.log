@@ -1,0 +1,137 @@
+Thu Aug 12 23:17:01 2021: COMMAND: perl  /10t/caix/smartie-sv/zhenghe/test/test1/scripts/testData/../scripts//Run_smartie-sv.pl  query1.fa  query1  ref.fa   ref  /10t/caix/src/smartie-sv/bin
+Provided cores: 20
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	callSVs
+	1	dummy
+	1	runBlasr
+	3
+
+Job 2: Aligning query to target
+
+
+              /10t/caix/src/smartie-sv/bin/blasr -clipping hard -alignContigs -sam -minMapQV 30 -nproc 6 -minPctIdentity 50 -unaligned unmappings/ref-query1-unaligned.fasta query1.fa.contigs.fa ref.fa -out mappings/ref-query1-aligned.sam
+     
+Processed 29 (10235173 bp)
+Processed 34 (20592684 bp)
+Finished mapping 34 (20592684 bp)
+Finished job 2.
+1 of 3 steps (33%) done
+
+Job 1: Calling SVs
+
+
+            cat mappings/ref-query1-aligned.sam | /10t/caix/src/smartie-sv/bin/printgaps ref.fa variants/ref-query1
+     
+INFO: fasta: ref.fa
+[fai_load] build FASTA index.
+Finished job 1.
+2 of 3 steps (67%) done
+
+localrule dummy:
+    input: variants/ref-query1.svs.bed
+    jobid: 0
+
+Finished job 0.
+3 of 3 steps (100%) done
+Thu Aug 12 23:17:34 2021: COMMAND: perl  /10t/caix/smartie-sv/zhenghe/test/test1/scripts/testData/../scripts//Run_smartie-sv.pl  query2.fa  query2  ref.fa   ref  /10t/caix/src/smartie-sv/bin
+Provided cores: 20
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	callSVs
+	1	dummy
+	1	runBlasr
+	3
+
+Job 2: Aligning query to target
+
+
+              /10t/caix/src/smartie-sv/bin/blasr -clipping hard -alignContigs -sam -minMapQV 30 -nproc 6 -minPctIdentity 50 -unaligned unmappings/ref-query2-unaligned.fasta query2.fa.contigs.fa ref.fa -out mappings/ref-query2-aligned.sam
+     
+Processed 4 (17543291 bp)
+Finished mapping 4 (17543291 bp)
+Finished job 2.
+1 of 3 steps (33%) done
+
+Job 1: Calling SVs
+
+
+            cat mappings/ref-query2-aligned.sam | /10t/caix/src/smartie-sv/bin/printgaps ref.fa variants/ref-query2
+     
+INFO: fasta: ref.fa
+[fai_load] build FASTA index.
+Finished job 1.
+2 of 3 steps (67%) done
+
+localrule dummy:
+    input: variants/ref-query2.svs.bed
+    jobid: 0
+
+Finished job 0.
+3 of 3 steps (100%) done
+Thu Aug 12 23:18:54 2021: COMMAND: perl /10t/caix/smartie-sv/zhenghe/test/test1/scripts/testData/../scripts//Merge_insertions_deletions.pl  query.info.lst  ref
+Thu Aug 12 23:18:56 2021: COMMAND: perl /10t/caix/smartie-sv/zhenghe/test/test1/scripts/testData/../scripts//blast_INS_DEL_seq_to_TE_lib.pl  ref.merged.DEL.gz  EDTA.TElib.fa
+Thu Aug 12 23:19:04 2021: COMMAND: perl /10t/caix/smartie-sv/zhenghe/test/test1/scripts/testData/../scripts//blast_INS_DEL_seq_to_TE_lib.pl  ref.merged.INS.gz  EDTA.TElib.fa
+Thu Aug 12 23:19:11 2021: COMMAND: perl  /10t/caix/smartie-sv/zhenghe/test/test1/scripts/testData/../scripts//deletion_annotation.pl  ref.merged.DEL.gz.withMorethan80_TE_cov  ref.gff3
+Thu Aug 12 23:20:13 2021: COMMAND: perl  /10t/caix/smartie-sv/zhenghe/test/test1/scripts/testData/../scripts//insertion_annotation.pl  ref.merged.INS.gz.withMorethan80_TE_cov  ref.gff3
+Thu Aug 12 23:21:28 2021: CMD: perl /10t/caix/smartie-sv/zhenghe/test/test1/scripts/testData/../scripts//get_referenceTEinsertions_and_flanking_Seqs.pl  ref.fa   reference_TE.insertions.xls    ref
+Thu Aug 12 23:21:28 2021: CMD: perl /10t/caix/smartie-sv/zhenghe/test/test1/scripts/testData/../scripts//get_nonReferenceTEinsertions_and_flanking_Seqs.pl  ref.fa  non-reference_TE.insertions.xls   ref.merged.INS.gz.withMorethan80_TE_cov  ref
+Thu Aug 12 23:21:29 2021: CMD: /10t/caix/smartie-sv/zhenghe/test/test1/scripts/testData/../scripts//bwa index ref.Non-referenceTEinsertions_and_flanking1kb.fasta
+[bwa_index] Pack FASTA... 0.02 sec
+[bwa_index] Construct BWT for the packed sequence...
+[bwa_index] 0.90 seconds elapse.
+[bwa_index] Update BWT... 0.01 sec
+[bwa_index] Pack forward-only FASTA... 0.01 sec
+[bwa_index] Construct SA from BWT and Occ... 0.19 sec
+[main] Version: 0.7.17-r1188
+[main] CMD: /10t/caix/smartie-sv/zhenghe/test/test1/scripts/testData/../scripts//bwa index ref.Non-referenceTEinsertions_and_flanking1kb.fasta
+[main] Real time: 1.178 sec; CPU: 1.159 sec
+Thu Aug 12 23:21:30 2021: CMD: /10t/caix/smartie-sv/zhenghe/test/test1/scripts/testData/../scripts//bwa mem  -t  10  -T 20  -Y   ref.Non-referenceTEinsertions_and_flanking1kb.fasta  Sam1_1.fq.gz  Sam1_2.fq.gz  >  Sam1.sam
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[M::process] read 400000 sequences (59472546 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (9, 4130, 12, 4)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (110, 168, 219)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 437)
+[M::mem_pestat] mean and std.dev: (167.07, 80.22)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 546)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (88, 219, 3553)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 10483)
+[M::mem_pestat] mean and std.dev: (1176.00, 1793.16)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 13948)
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_pestat] skip orientation RF
+[M::mem_process_seqs] Processed 400000 reads in 35.308 CPU sec, 3.682 real sec
+[main] Version: 0.7.17-r1188
+[main] CMD: /10t/caix/smartie-sv/zhenghe/test/test1/scripts/testData/../scripts//bwa mem -t 10 -T 20 -Y ref.Non-referenceTEinsertions_and_flanking1kb.fasta Sam1_1.fq.gz Sam1_2.fq.gz
+[main] Real time: 5.450 sec; CPU: 37.061 sec
+Thu Aug 12 23:21:37 2021: CMD: /10t/caix/smartie-sv/zhenghe/test/test1/scripts/testData/../scripts//bwa index ref.referenceTEinsertions_and_flanking1kb.fasta
+[bwa_index] Pack FASTA... 0.03 sec
+[bwa_index] Construct BWT for the packed sequence...
+[bwa_index] 0.79 seconds elapse.
+[bwa_index] Update BWT... 0.01 sec
+[bwa_index] Pack forward-only FASTA... 0.01 sec
+[bwa_index] Construct SA from BWT and Occ... 0.23 sec
+[main] Version: 0.7.17-r1188
+[main] CMD: /10t/caix/smartie-sv/zhenghe/test/test1/scripts/testData/../scripts//bwa index ref.referenceTEinsertions_and_flanking1kb.fasta
+[main] Real time: 1.107 sec; CPU: 1.072 sec
+Thu Aug 12 23:21:38 2021: CMD: /10t/caix/smartie-sv/zhenghe/test/test1/scripts/testData/../scripts//bwa mem  -t  10  -T 20  -Y   ref.referenceTEinsertions_and_flanking1kb.fasta  Sam1_1.fq.gz  Sam1_2.fq.gz  >  Sam1.sam
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[M::process] read 400000 sequences (59472546 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (5, 4805, 4, 4)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (122, 178, 227)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 437)
+[M::mem_pestat] mean and std.dev: (176.19, 79.54)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 542)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 400000 reads in 35.047 CPU sec, 3.651 real sec
+[main] Version: 0.7.17-r1188
+[main] CMD: /10t/caix/smartie-sv/zhenghe/test/test1/scripts/testData/../scripts//bwa mem -t 10 -T 20 -Y ref.referenceTEinsertions_and_flanking1kb.fasta Sam1_1.fq.gz Sam1_2.fq.gz
+[main] Real time: 5.291 sec; CPU: 36.675 sec
