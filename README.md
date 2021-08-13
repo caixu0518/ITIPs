@@ -18,7 +18,7 @@ Using each of the 20 *B. rapa* genomes as the reference and aligned each of the 
 ![image](https://github.com/caixu0518/ITIPs/blob/main/png/Step%203.png)
 
 # Installation
-One dependent program: [smartie-sv](https://github.com/zeeev/smartie-sv)
+One dependent program: [smartie-sv](https://github.com/zeeev/smartie-sv)  
 The program does not require additional installation.
 
 ```
