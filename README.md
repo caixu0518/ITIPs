@@ -69,7 +69,7 @@ CC indicates that the genotype in the corresponding accession was consistent wit
 # Usage
 There are three main sequential steps to identify and genotype TE insertions, corresponding to 01.Reference_Nonreference_TEinsertion.pl, 02.get_TE_insertions_and_flankingSequences.pl, and 03.TE_insertions_genotype.pl.
 
-Step 1: Identification of reference and non-reference TE insertions between different genomes
+Step 1: Identification of reference and non-reference TE insertions between different genomes.
 
 ```
 perl 01.Reference_Nonreference_TEinsertion.pl  -h
@@ -83,7 +83,28 @@ Usage: perl 01.Reference_Nonreference_TEinsertion.pl  -query <query.info.lst>  -
 -script [required] the path to perl scripts
 ```
 
+Step 2: extract flanking seuqences of each TE insertion
+```
+perl 02.get_TE_insertions_and_flankingSequences.pl  -h
 
+Usage: perl 02.get_TE_insertions_and_flankingSequences.pl  -refGenome <ref.fa>  -refName  <ref>   -script <the path to scripts>  reference_TE.insertions.xls  non-reference_TE.insertions.xls
 
+-refGenome	[required] the reference genome in fasta foramt.
+-refName	  [required] the reference genome name, same as provided in the first step.
+-script   	[required] the path to perl scripts
+```
 
+Step 3: Genotype TE insertions using short reads
+```
+perl 03.TE_insertions_genotype.pl -h
 
+perl 03.TE_insertions_genotype.pl   -Fasta  <ref.referenceTEinsertions_and_flanking1kb.fasta>  -leftRead <Sam1_1.fq.gz>  -rightRead <Sam1_2.fq.gz> -samId <Sam1>  -output <Sam1.refereceTEinsertion>  -script <the path to scripts>  -threads <threads>
+
+-Fasta	[required] the TE insertion and flanking sequences in fasta format
+-leftRead	[required] left read
+-rightRead	[required] right read
+-samId	[required] sample name i.e. Sam1
+-output	[required] TE genotype results
+-script	[required] the path to scripts
+-threads	[optional] threads  default: 6 cores
+```
