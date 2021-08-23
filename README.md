@@ -50,7 +50,20 @@ A10     325635  326898  deletion        1263    query2  BraA10g000690.3.1C      
 A10     329657  332373  deletion        2716    query2  -       BraA10g000690.3.1C      -       -
 ```
 
-
+Phase 2: Genotypes of TE insertions in each resequencing genome. i.e. Sam1.refereceTEinsertion and Sam1.Non-refereceTEinsertion.
+```
+TEindex AB      BC      AC      L       R       Genotype
+Dref100 0       0       0       5       0       GG
+Dref103 0       0       0       0       0       NA
+Dref104 0       0       0       5       0       GG
+Dref113 0       0       0       1       0       GG
+Dref116 0       0       0       0       0       NA
+Dref12  0       0       0       1       0       GG
+Dref122 0       0       0       0       0       NA
+Dref123 0       0       0       1       0       GG
+Dref125 0       0       0       1       0       GG
+```
+CC indicates that the genotype in the corresponding accession was consistent with the reference genome, and GG indicates that the genotype in the accession was different from the reference genome, NA represents missing loci.
 
 
 # Usage
