@@ -108,3 +108,16 @@ perl 03.TE_insertions_genotype.pl   -Fasta  <ref.referenceTEinsertions_and_flank
 -script	[required] the path to scripts
 -threads	[optional] threads  default: 6 cores
 ```
+
+# An example
+we recommend that users modified their file format with those we provided in the testData.
+
+```
+cd  testData
+sh  runMe.sh
+```
+Final results:
+Phase 1: reference_TE.insertions.xls and non-reference_TE.insertions.xls
+Pahse 2: Sam1.refereceTEinsertion and Sam1.Non-refereceTEinsertion
+
+# Citations
