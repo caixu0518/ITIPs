@@ -147,7 +147,7 @@ perl ../03.TE_insertions_genotype.pl      -Fasta  ref.referenceTEinsertions_and_
                                           -script  ${script}  \
                                           -threads 10
 ```
-Final results:
+Final results:  
 Phase 1: reference_TE.insertions.xls and non-reference_TE.insertions.xls  
 Pahse 2: Sam1.refereceTEinsertion and Sam1.Non-refereceTEinsertion
 
