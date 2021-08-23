@@ -1,0 +1,9 @@
+{
+        "install" :"/10t/caix/src/smartie-sv",
+        "targets" : {
+                  "ref" : "ref.fa"
+                  },
+        "queries" : {
+                 "query1"   : "query1.fa.contigs.fa"
+           },
+}
