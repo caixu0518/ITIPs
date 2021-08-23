@@ -67,5 +67,23 @@ CC indicates that the genotype in the corresponding accession was consistent wit
 
 
 # Usage
+There are three main sequential steps to identify and genotype TE insertions, corresponding to 01.Reference_Nonreference_TEinsertion.pl, 02.get_TE_insertions_and_flankingSequences.pl, and 03.TE_insertions_genotype.pl.
+
+Step 1: Identification of reference and non-reference TE insertions between different genomes
+
+```
+perl 01.Reference_Nonreference_TEinsertion.pl  -h
+
+Usage: perl 01.Reference_Nonreference_TEinsertion.pl  -query <query.info.lst>  -ref <reference.info.lst>  -TElib <EDTA.TElib.fa>  -bin <the path to smartie-sv>  -script <the path to scripts>
+
+-query	[required] the query id and query genome files. Two columns (queryName queryGenomeFile).
+-ref    [required] the reference information. Three columns (referenceName ReferenceGenomeFile ReferenceGff3)
+-TElib  [required] the species TE library
+-bin   	[required] the path to smartie-sv. i.e. /10t/caix/src/smartie-sv/bin
+-script [required] the path to perl scripts
+```
+
+
+
 
 
