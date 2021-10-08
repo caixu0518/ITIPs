@@ -3,7 +3,7 @@
 We developed a pipeline to identify population-scale TIPs based on a pan-genome analysis and large-scale resequencing of accessions in _B. rapa_. The pipeline for identifying population-scale TIPs employed three sequential steps: __identification of insertions and deletions__, __construction of the TE insertion dataset__, and __determination of TIPs at a population scale__.
 
 # Introduction
-A pipeline developed to adequately retrieve population-scale TIPs
+## A pipeline developed to adequately retrieve population-scale TIPs
 
 ## Step 1：Identification of insertions and deletions in the _B. rapa_ pan-genome.
 
