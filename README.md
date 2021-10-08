@@ -1,20 +1,25 @@
 # ITIPs
-## Identification TE insertions polymorphisms based on a pan-genome and large-scale resequencing data
+## Identification TE insertion polymorphisms (TIPs) based on a pan-genome and large-scale resequencing data
 
+We developed a pipeline to identify population-scale TIPs based on a pan-genome analysis and large-scale resequencing of accessions in _B. rapa_. The pipeline for identifying population-scale TIPs employed three sequential steps: __identification of insertions and deletions__, __construction of the TE insertion dataset__, and __determination of TIPs at a population scale__.
 
 # Introduction
-Identification TE insertions polymorphisms based on a pan-genome and large-scale resequencing data
-## Step 1：identification of reference insertions and deletions.
+A pipeline developed to adequately retrieve population-scale TIPs
 
-Using each of the 20 *B. rapa* genomes as the reference and aligned each of the left 19 genome sequneces to the reference genome and call reference insertions and deletions using the [smartie-sv](https://github.com/zeeev/smartie-sv) piepeline.
+## Step 1：Identification of insertions and deletions in the _B. rapa_ pan-genome.
+
+In this step, we used each of the 20 _B. rapa_ genomes as the reference and identified insertions and deletions in the _B. rapa_ pan-genome using the [smartie-sv](https://github.com/zeeev/smartie-sv) piepeline.
 
 ![image](https://github.com/caixu0518/ITIPs/blob/main/png/Step%201.png)
 
-## Step 2: Determination of TE insertions polymorphisms (TIPs).
+## Step 2: Construction of the TE insertion dataset.
+After obtaining insertions and deletions, we mapped each insertion or deletion onto the B. rapa TE library. If the similarity and coverage of one deletion (or insertion) were greater than 80% (also called ‘the 80-80 rule’), then the deletion (or insertion) was defined as a TE insertion. Furthermore, we proposed the concepts of ‘aligned regions’ and ‘unaligned regions’ to describe TIPs in the pan-genome. The concepts were based on Chiifu genomic sequences. If genomic sequences from the other 19 accessions could be covered by the Chiifu sequences, we denoted such regions as being ‘aligned regions’; if the genomic sequences in the other genomes could not be covered by the Chiifu sequences, we defined them as ‘unaligned regions’.
 
 ![image](https://github.com/caixu0518/ITIPs/blob/main/png/Step%202.png)
 
-## Step 3: Genotype TE insertions in a large-scale *B. rapa* population using short reads.
+## Step 3: Determination of TIPs at a population scale.
+We implemented the strategy by mapping the short reads onto the TE insertion and their flanking sequences. If one or two boundaries for a TE insertion were covered by the short reads, we defined this accession as harboring the same TE insertion. The detailed process included three steps: we first extracted the flanking sequences of each TE insertion (including 1 kb upstream and downstream of the TE insertion); then, the upstream flanking sequence, the TE insertion sequence, and the downstream flanking sequence were linked together in order. After that, we mapped the population-scale resequencing short reads onto our constructed target sequences. If a read in one accession was directly aligned to the upstream and downstream flanking sequences, we considered that there was no TE insertion in this accession; if a read in one accession was directly aligned to the TE insertion sequence and at least one flanking sequence (upstream or downstream flanking sequence), then the accession was considered to harbor the same TE insertion.
+
 ![image](https://github.com/caixu0518/ITIPs/blob/main/png/Step%203.png)
 
 # Installation
