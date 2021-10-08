@@ -6,6 +6,7 @@ use Getopt::Long;
 
 
 #--Usage-----------------------------------------
+
 my $usage=<<USAGE;
 
                 ****** extract flanking seuqences of each TE insertion ******
