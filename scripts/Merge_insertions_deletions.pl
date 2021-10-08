@@ -1,5 +1,9 @@
-#!/usr/bin/perl -w
+#!/usr/bin/perl
+
+use warnings;
 use strict;
+
+
 
 my $in0 = $ARGV[0]; ##- all.querys.lst  one column, describe the query name
 my $prefix = $ARGV[1];  ##- the ref name
