@@ -1,5 +1,7 @@
-#!/usr/bin/perl -w
+#!/usr/bin/perl
+
 use strict;
+use warnings;
 
 my $in0 = $ARGV[0]; ##- Merged.SV.INS.gz.withMorethan80_TE_cov
 my $in1 = $ARGV[1]; ##- Brapa_Chiifu_v3.1_genes.gff3
