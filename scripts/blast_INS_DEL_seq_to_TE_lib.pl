@@ -1,5 +1,8 @@
-#!/usr/bin/perl -w
+#!/usr/bin/perl 
+
 use strict;
+use warnings;
+
 
 my $in0 = $ARGV[0]; ##- Merged.SV.DEL.gz
 my $in1 = $ARGV[1]; ##- EDTA.TElib.fa 
