@@ -6,6 +6,7 @@ use Getopt::Long;
 
 
 #--Usage-----------------------------------------
+
 my $usage=<<USAGE;
 
           ****** Genotype TE insertions using short reads ******
