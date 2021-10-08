@@ -1,5 +1,4 @@
-# _ITIPs_
-## Identification transposable element insertion polymorphisms (TIPs) based on a pan-genome and large-scale resequencing data
+# ITIPs: Identification transposable element insertion polymorphisms (TIPs) based on a pan-genome and large-scale resequencing data
 
 We developed a pipeline to identify population-scale TIPs based on a pan-genome analysis and large-scale resequencing of accessions in _B. rapa_. The pipeline for identifying population-scale TIPs employed three sequential steps: __identification of insertions and deletions__, __construction of the TE insertion dataset__, and __determination of TIPs at a population scale__.
 
