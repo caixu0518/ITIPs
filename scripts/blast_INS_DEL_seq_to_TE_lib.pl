@@ -17,7 +17,6 @@ my $output = $in0.".withMorethan80_TE_cov";
    &runBlast($SeqFile, $in1, \%index2Info, $output);   
  
 
-
 sub runBlast {
 
     my ($SeqFile, $TELib, $index2Info, $output) = @_;
