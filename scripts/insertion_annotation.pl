@@ -16,7 +16,6 @@ my $genefeature = $in1.".bed";
  
    `rm $genefeature`;
 
-
 sub output {
 
     my ($bedFile, $svbed, $output) = @_;
