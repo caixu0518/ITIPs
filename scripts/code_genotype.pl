@@ -1,4 +1,6 @@
-#!/usr/bin/perlv -w
+#!/usr/bin/perl
+
+use warnings;
 use strict;
 
 my $in0 = $ARGV[0]; ##- readMapped.regions.Lst
