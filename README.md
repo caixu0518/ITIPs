@@ -151,8 +151,10 @@ perl ../03.TE_insertions_genotype.pl      -Fasta  ref.referenceTEinsertions_and_
                                           -script  ${script}  \
                                           -threads 10
 ```
+
 Final results:  
 Phase 1: reference_TE.insertions.xls and non-reference_TE.insertions.xls  
 Pahse 2: Sam1.refereceTEinsertion and Sam1.Non-refereceTEinsertion
 
 # Citations
+Transposable element insertion: a hidden major source of domesticated phenotypic variation in _Brassica rapa_(unpublished)
