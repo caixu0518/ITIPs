@@ -157,4 +157,6 @@ Phase 1: reference_TE.insertions.xls and non-reference_TE.insertions.xls
 Pahse 2: Sam1.refereceTEinsertion and Sam1.Non-refereceTEinsertion
 
 # Citations
-Transposable element insertion: a hidden major source of domesticated phenotypic variation in _Brassica rapa_(unpublished)
+
+
+Xu Cai, Runmao Lin, Jianli Liang, Graham J. King, Jian Wu, Xiaowu Wang. (2022). Transposable element insertion: a hidden major source of domesticated phenotypic variation in _Brassica rapa._ Plant Biotechnology Journal. https://doi.org/10.1111/pbi.13807
